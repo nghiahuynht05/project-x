@@ -1,5 +1,4 @@
 import * as React from "react";
-
 import "./App.css";
 
 import CssBaseline from "@mui/material/CssBaseline";
@@ -50,7 +49,9 @@ function App() {
           >
             <Item sx={{ p: 0 }}>
               <Grid sx={{ p: 0 }}>
-                <Item sx={{ height: "20vh" }}>Charlotte Luna & Madison Paisley</Item>
+                <Item sx={{ height: "20vh" }}>
+                  Charlotte Luna & Madison Paisley
+                </Item>
                 <Item sx={{ height: "35vh" }}>
                   <Grid
                     container
@@ -78,7 +79,76 @@ function App() {
             </Item>
           </Grid>
           <Grid sx={{ "justify-content": "top", height: "10vh", p: 0 }}>
-            <Item>xs=8</Item>
+            <Grid sx={{ display: "flex" }}>
+              <Box
+                sx={{
+                  fill: "#FAE5D3",
+                  cursor: "pointer",
+                  transition: "opacity 0.2s",
+                }}
+              >
+                <svg
+                  className=""
+                  height={32}
+                  viewBox="0 0 24 24"
+                  width={32}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z" />
+                  <path d="M0-.5h24v24H0z" fill="none" />
+                </svg>
+              </Box>
+              <Box>
+                <div className="pagination-container">
+                  <div className="little-dot  little-dot--first" />
+                  <div className="little-dot">
+                    <div className="big-dot-container">
+                      <div className="big-dot" />
+                    </div>
+                  </div>
+                  <div className="little-dot  little-dot--last" />
+                </div>
+              </Box>
+              <Box
+                sx={{
+                  fill: "#FAE5D3",
+                  cursor: "pointer",
+                  transition: "opacity 0.2s",
+                }}
+              >
+                <svg
+                  className=""
+                  height={32}
+                  viewBox="0 0 24 24"
+                  width={32}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z" />
+                  <path d="M0-.25h24v24H0z" fill="none" />
+                </svg>
+              </Box>
+              {/* <div className="pagination-wrapper">
+                <div className="pagination-container">
+                  <div className="little-dot  little-dot--first" />
+                  <div className="little-dot">
+                    <div className="big-dot-container">
+                      <div className="big-dot" />
+                    </div>
+                  </div>
+                  <div className="little-dot  little-dot--last" />
+                </div>
+                <svg
+                  className="btn btn--next"
+                  height={48}
+                  viewBox="0 0 24 24"
+                  width={48}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z" />
+                  <path d="M0-.25h24v24H0z" fill="none" />
+                </svg>
+              </div> */}
+            </Grid>
           </Grid>
         </Grid>
       </Container>
