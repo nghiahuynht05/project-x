@@ -8,6 +8,7 @@ import styled from "@mui/system/styled";
 
 import Container from "@mui/material/Container";
 import images from "./images/home-backgroup-card.jpg";
+import horizontalLine from "./images/horizontal-line.png";
 
 const Item = styled("div")(({ theme }) => ({
   borderRadius: "4px",
@@ -49,9 +50,35 @@ function App() {
           >
             <Item sx={{ p: 0 }}>
               <Grid sx={{ p: 0 }}>
-                <Item sx={{ height: "20vh" }}>
-                  Charlotte Luna & Madison Paisley
-                </Item>
+                <Grid
+                  sx={{
+                    height: "20vh",
+                    fontFamily: "Pinyon Script",
+                    fontSize: "35px",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      textAlign: "left",
+                      paddingTop: "10px",
+                      paddingLeft: "20px",
+                    }}
+                  >
+                    <span>Charlotte Luna</span>
+                  </Box>
+                  <Box>
+                    <span>&</span>
+                  </Box>
+                  <Box
+                    sx={{
+                      textAlign: "right",
+                      paddingBottom: "10px",
+                      paddingRight: "20px",
+                    }}
+                  >
+                    <span>Madison Paisley</span>
+                  </Box>
+                </Grid>
                 <Item sx={{ height: "35vh" }}>
                   <Grid
                     container
@@ -74,7 +101,77 @@ function App() {
                     ></Box>
                   </Grid>
                 </Item>
-                <Item sx={{ height: "20vh", p: 0 }}></Item>
+                <Item sx={{ height: "20vh", p: 0 }}>
+                  <Grid
+                    sx={{
+                      height: "20vh",
+                      fontFamily: "PT Serif",
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        textAlign: "left",
+                        fontSize: "35px",
+                      }}
+                    >
+                      <Grid sx={{ display: "flex", justifyContent: "center" }}>
+                        <Box
+                          sx={{ "font-weight": "bold", paddingRight: "10px" }}
+                        >
+                          <span>Save</span>
+                        </Box>
+                        <Box sx={{ paddingRight: "10px" }}>
+                          <span> the</span>
+                        </Box>
+                        <Box sx={{ "font-weight": "bold" }}>
+                          <span> Date</span>
+                        </Box>
+                      </Grid>
+                    </Box>
+                    <Grid sx={{ display: "flex", justifyContent: "center" }}>
+                      <Box
+                        sx={{
+                          background: `url(${horizontalLine})`,
+                          backgroundPositionY: "center",
+                          backgroundSize: "cover",
+                          backgroundRepeat: "no-repeat",
+                          height: "30px",
+                          width: "60%",
+                        }}
+                      ></Box>
+                    </Grid>
+                    <Box
+                      sx={{
+                        textAlign: "right"
+                      }}
+                    >
+                      <Grid
+                        sx={{
+                          display: "flex",
+                          justifyContent: "center",
+                          alignContent: "flex-end",
+                          alignItems: "flex-end",
+                        }}
+                      >
+                        <Box sx={{ fontSize: "28px", paddingRight: "10px" }}>
+                          <span>Sunday</span>
+                        </Box>
+                        <Box
+                          sx={{
+                            "font-weight": "bold",
+                            paddingRight: "10px",
+                            fontSize: "30px",
+                          }}
+                        >
+                          <span> 18</span>
+                        </Box>
+                        <Box sx={{ fontSize: "28px" }}>
+                          <span> December</span>
+                        </Box>
+                      </Grid>
+                    </Box>
+                  </Grid>
+                </Item>
               </Grid>
             </Item>
           </Grid>
@@ -127,27 +224,6 @@ function App() {
                   <path d="M0-.25h24v24H0z" fill="none" />
                 </svg>
               </Box>
-              {/* <div className="pagination-wrapper">
-                <div className="pagination-container">
-                  <div className="little-dot  little-dot--first" />
-                  <div className="little-dot">
-                    <div className="big-dot-container">
-                      <div className="big-dot" />
-                    </div>
-                  </div>
-                  <div className="little-dot  little-dot--last" />
-                </div>
-                <svg
-                  className="btn btn--next"
-                  height={48}
-                  viewBox="0 0 24 24"
-                  width={48}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z" />
-                  <path d="M0-.25h24v24H0z" fill="none" />
-                </svg>
-              </div> */}
             </Grid>
           </Grid>
         </Grid>
