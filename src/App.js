@@ -9,6 +9,7 @@ import styled from "@mui/system/styled";
 import Container from "@mui/material/Container";
 import images from "./images/home-backgroup-card.jpg";
 import horizontalLine from "./images/horizontal-line.png";
+import centerImg from "./images/home-1.jpg";
 
 const Item = styled("div")(({ theme }) => ({
   borderRadius: "4px",
@@ -97,6 +98,7 @@ function App() {
                           "0.375em 0.375em 0 0 rgba(15, 28, 63, 0.125)",
                         height: "15em",
                         width: "15em",
+                        backgroundImage:`url(${centerImg})`
                       }}
                     ></Box>
                   </Grid>
@@ -114,7 +116,7 @@ function App() {
                         fontSize: "35px",
                       }}
                     >
-                      <Grid sx={{ display: "flex", justifyContent: "center" }}>
+                      <Grid sx={{ display: "flex", justifyContent: "center", }}>
                         <Box
                           sx={{ "font-weight": "bold", paddingRight: "10px" }}
                         >
