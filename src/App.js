@@ -17,6 +17,44 @@ const Item = styled("div")(({ theme }) => ({
   height: "100%",
 }));
 
+function btnClick(actions) {
+  if (actions === "prev")
+    document
+      .querySelectorAll(".btnp")[0]
+      .addEventListener("click", function () {
+        document
+          .querySelector(".pagination-wrapper")
+          .classList.add("transition-prev");
+      });
+  else {
+    document.querySelectorAll(".btn")[0].addEventListener("click", function () {
+      document
+        .querySelector(".pagination-wrapper")
+        .classList.add("transition-next");
+    });
+  }
+  setTimeout(cleanClasses, 500);
+}
+
+function cleanClasses() {
+  if (
+    document
+      .querySelector(".pagination-wrapper")
+      .classList.contains("transition-next")
+  ) {
+    document
+      .querySelector(".pagination-wrapper")
+      .classList.remove("transition-next");
+  } else if (
+    document
+      .querySelector(".pagination-wrapper")
+      .classList.contains("transition-prev")
+  ) {
+    document
+      .querySelector(".pagination-wrapper")
+      .classList.remove("transition-prev");
+  }
+}
 function App() {
   return (
     <React.Fragment>
@@ -32,21 +70,21 @@ function App() {
         <Grid
           container="false"
           sx={{
-            "justify-content": "center",
-            "flex-direction": "column",
+            justifyContent: "center",
+            flexDirection: "column",
             height: "95vh",
             p: 0,
           }}
         >
           <Grid
             sx={{
-              "justify-content": "top",
-              height: "75vh",
+              justifyContent: "top",
+              height: "80vh",
               p: 0,
               backgroundImage: `url(${images})`,
-              "background-repeat": "no-repeat",
-              "background-size": "cover",
-              "background-position": "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
             }}
           >
             <Item sx={{ p: 0 }}>
@@ -93,8 +131,8 @@ function App() {
                       sx={{
                         background: "",
                         border: "0.1875em solid #FFFF",
-                        "border-radius": "50%",
-                        "box-shadow":
+                        borderRadius: "50%",
+                        boxShadow:
                           "0.375em 0.375em 0 0 rgba(15, 28, 63, 0.125)",
                         height: "15em",
                         width: "15em",
@@ -116,16 +154,14 @@ function App() {
                         fontSize: "35px",
                       }}
                     >
-                      <Grid sx={{ display: "flex", justifyContent: "center", }}>
-                        <Box
-                          sx={{ "font-weight": "bold", paddingRight: "10px" }}
-                        >
+                      <Grid sx={{ display: "flex", justifyContent: "center" }}>
+                        <Box sx={{ fontWeight: "bold", paddingRight: "10px" }}>
                           <span>Save</span>
                         </Box>
                         <Box sx={{ paddingRight: "10px" }}>
                           <span> the</span>
                         </Box>
-                        <Box sx={{ "font-weight": "bold" }}>
+                        <Box sx={{ fontWeight: "bold" }}>
                           <span> Date</span>
                         </Box>
                       </Grid>
@@ -144,7 +180,7 @@ function App() {
                     </Grid>
                     <Box
                       sx={{
-                        textAlign: "right"
+                        textAlign: "right",
                       }}
                     >
                       <Grid
@@ -160,7 +196,7 @@ function App() {
                         </Box>
                         <Box
                           sx={{
-                            "font-weight": "bold",
+                            fontWeight: "bold",
                             paddingRight: "10px",
                             fontSize: "30px",
                           }}
@@ -177,17 +213,18 @@ function App() {
               </Grid>
             </Item>
           </Grid>
-          <Grid sx={{ "justify-content": "top", height: "10vh", p: 0 }}>
-            <Grid sx={{ display: "flex" }}>
+          <Grid sx={{ justifyContent: "top", height: "10vh", p: 0 }}>
+            <Grid sx={{ display: "flex" }} className="pagination-wrapper">
               <Box
                 sx={{
                   fill: "#FAE5D3",
                   cursor: "pointer",
                   transition: "opacity 0.2s",
                 }}
+                onClick={() => btnClick("prev")}
               >
                 <svg
-                  className=""
+                  className="btn btn--prev"
                   height={32}
                   viewBox="0 0 24 24"
                   width={32}
@@ -214,9 +251,10 @@ function App() {
                   cursor: "pointer",
                   transition: "opacity 0.2s",
                 }}
+                onClick={() => btnClick("next")}
               >
                 <svg
-                  className=""
+                  className="btnp btn--prev"
                   height={32}
                   viewBox="0 0 24 24"
                   width={32}
