@@ -18,7 +18,7 @@ const Item = styled("div")(({ theme }) => ({
 }));
 
 function btnClick(actions) {
-  if (actions === "prev")
+  if (actions === "prev") {
     document
       .querySelectorAll(".btnp")[0]
       .addEventListener("click", function () {
@@ -26,7 +26,8 @@ function btnClick(actions) {
           .querySelector(".pagination-wrapper")
           .classList.add("transition-prev");
       });
-  else {
+  }
+  if (actions === "next") {
     document.querySelectorAll(".btn")[0].addEventListener("click", function () {
       document
         .querySelector(".pagination-wrapper")
@@ -65,8 +66,7 @@ function App() {
           bgcolor: "background.paper",
           p: 1.6,
           minWidth: 300,
-        }}
-      >
+        }}>
         <Grid
           container="false"
           sx={{
@@ -74,8 +74,7 @@ function App() {
             flexDirection: "column",
             height: "95vh",
             p: 0,
-          }}
-        >
+          }}>
           <Grid
             sx={{
               justifyContent: "top",
@@ -85,8 +84,7 @@ function App() {
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
               backgroundPosition: "center",
-            }}
-          >
+            }}>
             <Item sx={{ p: 0 }}>
               <Grid sx={{ p: 0 }}>
                 <Grid
@@ -94,15 +92,13 @@ function App() {
                     height: "20vh",
                     fontFamily: "Pinyon Script",
                     fontSize: "35px",
-                  }}
-                >
+                  }}>
                   <Box
                     sx={{
                       textAlign: "left",
                       paddingTop: "10px",
                       paddingLeft: "20px",
-                    }}
-                  >
+                    }}>
                     <span>Charlotte Luna</span>
                   </Box>
                   <Box>
@@ -113,8 +109,7 @@ function App() {
                       textAlign: "right",
                       paddingBottom: "10px",
                       paddingRight: "20px",
-                    }}
-                  >
+                    }}>
                     <span>Madison Paisley</span>
                   </Box>
                 </Grid>
@@ -125,8 +120,7 @@ function App() {
                     direction="column"
                     alignItems="center"
                     justifyContent="center"
-                    style={{ minHeight: "35vh" }}
-                  >
+                    style={{ minHeight: "35vh" }}>
                     <Box
                       sx={{
                         background: "",
@@ -136,9 +130,11 @@ function App() {
                           "0.375em 0.375em 0 0 rgba(15, 28, 63, 0.125)",
                         height: "15em",
                         width: "15em",
-                        backgroundImage:`url(${centerImg})`
-                      }}
-                    ></Box>
+                        backgroundImage: `url(${centerImg})`,
+                        backgroundRepeat: "no-repeat",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                      }}></Box>
                   </Grid>
                 </Item>
                 <Item sx={{ height: "20vh", p: 0 }}>
@@ -146,14 +142,12 @@ function App() {
                     sx={{
                       height: "20vh",
                       fontFamily: "PT Serif",
-                    }}
-                  >
+                    }}>
                     <Box
                       sx={{
                         textAlign: "left",
                         fontSize: "35px",
-                      }}
-                    >
+                      }}>
                       <Grid sx={{ display: "flex", justifyContent: "center" }}>
                         <Box sx={{ fontWeight: "bold", paddingRight: "10px" }}>
                           <span>Save</span>
@@ -175,22 +169,19 @@ function App() {
                           backgroundRepeat: "no-repeat",
                           height: "30px",
                           width: "60%",
-                        }}
-                      ></Box>
+                        }}></Box>
                     </Grid>
                     <Box
                       sx={{
                         textAlign: "right",
-                      }}
-                    >
+                      }}>
                       <Grid
                         sx={{
                           display: "flex",
                           justifyContent: "center",
                           alignContent: "flex-end",
                           alignItems: "flex-end",
-                        }}
-                      >
+                        }}>
                         <Box sx={{ fontSize: "28px", paddingRight: "10px" }}>
                           <span>Sunday</span>
                         </Box>
@@ -199,8 +190,7 @@ function App() {
                             fontWeight: "bold",
                             paddingRight: "10px",
                             fontSize: "30px",
-                          }}
-                        >
+                          }}>
                           <span> 18</span>
                         </Box>
                         <Box sx={{ fontSize: "28px" }}>
@@ -221,15 +211,13 @@ function App() {
                   cursor: "pointer",
                   transition: "opacity 0.2s",
                 }}
-                onClick={() => btnClick("prev")}
-              >
+                onClick={() => btnClick("prev")}>
                 <svg
-                  className="btn btn--prev"
+                  className="btnp btn--prev"
                   height={32}
                   viewBox="0 0 24 24"
                   width={32}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                  xmlns="http://www.w3.org/2000/svg">
                   <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z" />
                   <path d="M0-.5h24v24H0z" fill="none" />
                 </svg>
@@ -242,7 +230,7 @@ function App() {
                       <div className="big-dot" />
                     </div>
                   </div>
-                  <div className="little-dot  little-dot--last" />
+                  <div className="little-dot little-dot--last" />
                 </div>
               </Box>
               <Box
@@ -251,15 +239,13 @@ function App() {
                   cursor: "pointer",
                   transition: "opacity 0.2s",
                 }}
-                onClick={() => btnClick("next")}
-              >
+                onClick={() => btnClick("next")}>
                 <svg
-                  className="btnp btn--prev"
+                  className="btn btn--next"
                   height={32}
                   viewBox="0 0 24 24"
                   width={32}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                  xmlns="http://www.w3.org/2000/svg">
                   <path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z" />
                   <path d="M0-.25h24v24H0z" fill="none" />
                 </svg>
