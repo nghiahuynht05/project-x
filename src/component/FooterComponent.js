@@ -5,25 +5,38 @@ import Box from "@mui/material/Box";
 class FooterComponent extends Component {
   constructor(props) {
     super(props);
-    this.state = { clicked: false, actions: "" };
+    this.state = { clicked: false, actions: "", pages: 1 };
   }
 
   btnClick = (actions, e) => {
     if (actions === "prev") {
-      this.setState({ clicked: true, actions: "transition-prev" });
-      this.cleanClasses();
+      if (this.state.pages !== 0) {
+        this.setState({ 
+          clicked: true,
+          actions: "transition-prev",            
+          pages: this.state.pages - 1 });
+      }
     }
     if (actions === "next") {
-      this.setState({ clicked: true, actions: "transition-next" });
-      this.cleanClasses();
+      if (this.state.pages !== 5) {
+        this.setState({
+          clicked: true,
+          actions: "transition-next",
+          pages: this.state.pages + 1,
+        });
+      }
     }
-  };
 
-  cleanClasses() {
-    const timer = setTimeout(() => {
+    this.sendDateToParent();
+    setInterval(() => {
       this.setState({ clicked: false, actions: "" });
     }, 1500);
-    return () => clearTimeout(timer);
+
+  };
+
+  sendDateToParent() {
+    var pages = this.state.pages;
+    this.props.parentCallback(pages);
   }
 
   render() {

@@ -261,7 +261,8 @@ body {
   transform-style: preserve-3d;
   transform-origin: left;
 }
-.container:hover .cover {
+/* .container:hover .cover { */
+  .container:click .cover {
   transform: rotateY(-180deg);
 }
 .figure {
